@@ -10,21 +10,24 @@ import java.io.*;
 
 class LetterChange {  
   public static String LetterChanges(String str) {
-    char[] alphabet = "AbcdEfghIjklmnOpqrstUvwxyz".toCharArray();
-    char currentChar;
-    for ( int i = 0; i < str.length(); i++)
+    String alphabet = "AbcdEfghIjklmnOpqrstUvwxyz";
+    char currentChar,letter;
+    int i = 0;
+    while (i < str.length())
     {
-    currentChar = str.charAt(i);
-    for(int x = 0; x < alphabet.length; x++)
-    {
-      if (currentChar == alphabet[x]){
-        str.replace(currentChar,alphabet[i+1]);
+      currentChar = str.charAt(i);
+      for(int x = 0; x < alphabet.length(); x++)
+      {
+        letter = alphabet.charAt(x);
+        if (currentChar == letter){
+          str  = str.replace(currentChar,alphabet.charAt(x+1));
+          i++;
+        }
       }
     }
-    }
-      
     
-
+    
+    
     return str;
     
   } 

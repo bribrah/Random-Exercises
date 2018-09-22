@@ -11,24 +11,13 @@ import java.io.*;
 class LetterChange {  
   public static String LetterChanges(String str) {
     String alphabet = "AbcdEfghIjklmnOpqrstUvwxyz";
-    char currentChar,letter;
-    int i = 0;
-    while (i < str.length())
+    char[] string= str.toLowerCase().toCharArray();
+    for (int i = 0; i <string.length; i++)
     {
-      currentChar = str.charAt(i);
-      for(int x = 0; x < alphabet.length(); x++)
-      {
-        letter = alphabet.charAt(x);
-        if (currentChar == letter){
-          str  = str.replace(currentChar,alphabet.charAt(x+1));
-          i++;
-        }
-      }
+      char d = alphabet.charAt(((alphabet.toLowerCase().indexOf(string[i]))+1) % 26);
+      string[i] = d;
     }
-    
-    
-    
-    return str;
+    return new String(string);
     
   } 
   
