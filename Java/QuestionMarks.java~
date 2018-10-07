@@ -11,32 +11,33 @@ import java.io.*;
 class Main {  
   public static String QuestionsMarks(String str) 
   { 
-    String stringArray[] = str.split("");
-    String currentstr;
-    int sum,nums;
-    for (int i = 0;  i < stringArray.length; i++)
+    int numsExtract = Integer.parseInt(str);
+    String numTemp = Integer.toString(numsExtract);
+    int nums[] = new int[numTemp.length()];
+    int sum = 0;
+    int numsAdded = 0;
+    for (int i = 0; i<numTemp.length(); i++)
     {
-      currentstr = stringArray[i];
-      if (currentstr == "0" || "1" || "2" || "3"|| "4"||"5"||"6"||"7"||"8"||"9"){
-        sum = sum + Integer.parseInt(currentStr);
-        nums ++;
-          if (sum % 10 == 0){
-          str = "true";
-        }
-        else if (sum > 10){
-          sum = 0;
-        }
-        else if (nums > 1)
-        {
-          sum = 0;
-            nums = 0;
-        }
-      }
-      
-      
-      return str;
-      
+      nums[i] = numTemp.charAt(i);
     }
+    for (int i = 0; i<nums.length; i++)
+    {
+      sum = sum + nums[i];
+      numsAdded = numsAdded + 1;
+      if (sum % 10 == 0){
+        str = "true";
+        return str;
+        
+      }
+      else if (numsAdded > 2){
+        sum = 0;
+        numsAdded = 0;
+        str = "false";
+        return str;
+      }
+    }
+return str;
+      
   }
     
     public static void main (String[] args) {  

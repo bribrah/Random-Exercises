@@ -9,41 +9,59 @@ import java.util.*;
 import java.io.*;
 
 class Main {  
-  public static String QuestionsMarks(String str) 
-  { 
-    int numsExtract = Integer.parseInt(str);
-    String numTemp = Integer.toString(numsExtract);
-    int nums[] = new int[numTemp.length()];
-    int sum = 0;
-    int numsAdded = 0;
-    for (int i = 0; i<numTemp.length(); i++)
+  public static String QuestionsMarks(String str)
+  {
+    int currentNum, nums, sum, firstIndex, secondIndex, ?count, falseNum, trueNum;
+    String stringSplit[] = str.split("");
+    for (int i = 0; i < stringSplit.length; i++)
     {
-      nums[i] = numTemp.charAt(i);
-    }
-    for (int i = 0; i<nums.length; i++)
-    {
-      sum = sum + nums[i];
-      numsAdded = numsAdded + 1;
-      if (sum % 10 == 0){
-        str = "true";
-        return str;
+      currentNum = Integer.parseInt(stringSplit[i]);
+      if (currentNum != 0 && nums = 0){
+        firstIndex = i
+          sum = currentNum;
+        nums++}
+      else if (currentNum != 0 && nums = 1){
+        secondIndex = i
+          sum = currentNum + sum;
+      }
+      if ( sum = 10)
+      {
+        for (int x = firstIndex; x =< secondIndex; x++){
+          if (stringSplit[x] == "?"){
+            ?count++
+          }
+          if (i == secondIndex)
+          {
+            sum = 0;
+            nums = 0;
+            if {?count != 3) {
+              falseNum++
+            }
+            }
+        }
         
-      }
-      else if (numsAdded > 2){
-        sum = 0;
-        numsAdded = 0;
-        str = "false";
-        return str;
-      }
-    }
-return str;
+        if {?count != 3) {
+          falseNum++
+        }
+        
+        
+        
+        
+        
+        
+        }
       
-  }
-    
-    public static void main (String[] args) {  
-      // keep this function call here     
-      Scanner s = new Scanner(System.in);
-      System.out.print(QuestionsMarks(s.nextLine())); 
-    }   
-    
+      
+      
+      
+    }
+      return str;
+      }
+  
+  public static void main (String[] args) {  
+    // keep this function call here     
+    Scanner s = new Scanner(System.in);
+    System.out.print(QuestionsMarks(s.nextLine())); 
+  }   
+  
   }
